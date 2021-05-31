@@ -864,6 +864,7 @@ input::-webkit-input-placeholder {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, auto);
     text-align: inherit;
+    clear: both;
   }
 
   .footerlogo,
@@ -998,8 +999,22 @@ input::-webkit-input-placeholder {
 
   .productblog {
     margin: 0 5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 50px;
+  }
+
+  .left {
+    grid-column: 1;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  .right {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column-reverse;
+    align-self: start;
   }
 
   .productblog h1 {
@@ -1007,34 +1022,9 @@ input::-webkit-input-placeholder {
     margin-bottom: 50px;
   }
 
-  .productblog h1,
-  .left,
-  .right {
-    display: inline-block;
-  }
-
-  .left {
-    flex: 1;
-    padding-right: 50px;
-  }
-  .right {
-    flex: 1;
-  }
-
-  .left p {
-    margin: 50px 0 0 0;
-  }
-  .right p {
-    margin: 0 0 50px 0;
-  }
-
   .productblog img {
     width: 100%;
     height: 400px;
-  }
-  .productblog > *,
-  .aboutus > * {
-    margin: 0 0 0 0;
   }
 
   .smallimage {
@@ -1052,6 +1042,13 @@ input::-webkit-input-placeholder {
     position: fixed;
     top: 0;
     display: flex;
+  }
+  .right p {
+    margin-top: 50px;
+  }
+
+  .left p {
+    margin-bottom: 50px;
   }
 
   .aboutus {
