@@ -118,6 +118,9 @@ async function getAllPosts() {
         }
       }
     };
+    carousel.addEventListener("scroll", forLeftButton);
+
+    carousel.addEventListener("scroll", forRightButton);
 
     var style = window.getComputedStyle(carousel);
   } catch (error) {
