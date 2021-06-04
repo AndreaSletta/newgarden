@@ -39,6 +39,10 @@ li a:hover {
   cursor: pointer;
 }
 
+.hide {
+  display: none;
+}
+
 .hoverscale,
 .smoothetransition {
   transition: all, 0.5s;
@@ -492,13 +496,11 @@ input::-webkit-input-placeholder {
   cursor: pointer;
 }
 
-.sortingbar div {
-  padding: 5px 10px;
-}
 .sortingbar > *:first-child {
   justify-content: center;
   display: flex;
   flex-direction: row;
+  padding: 5px 10px;
 }
 .sortingbar > *:first-child img {
   height: 20px;
@@ -510,17 +512,32 @@ input::-webkit-input-placeholder {
 .sortingbar > *:first-child p {
   margin: 0 10px;
 }
-.hide {
-  display: none;
-  border-top: 2px solid black;
+
+.dropdowncontainer {
+  transition: all 0.4s ease;
+  overflow: hidden;
+  padding: 0px;
+  height: 0;
+}
+
+.dropdowncontainer > * {
+  padding: 0;
+  transition: all 0.4s ease;
+  border-radius: 1pt;
+  border-top: 2pt solid black;
 }
 
 #popular,
 #featured {
   display: none;
 }
-.sortingbar:hover .hide {
+.sortingbar:hover .dropdowncontainer {
   display: block;
+  height: 100px;
+}
+
+.sortingbar:hover .dropdowncontainer div {
+  padding: 5px 10px;
 }
 
 .sortingbar:hover > *:first-child img {
@@ -529,7 +546,6 @@ input::-webkit-input-placeholder {
   transform: rotate(270deg);
 }
 
-.hide:hover,
 .blackbutton:hover {
   background-color: white;
 }
